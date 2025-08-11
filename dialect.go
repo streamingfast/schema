@@ -23,7 +23,8 @@ var driverDialect = map[string]dialect{
 	"*pq.Driver":                   postgresDialect{},   // github.com/lib/pq
 	"*stdlib.Driver":               postgresDialect{},   // github.com/jackc/pgx
 	"*pgsqldriver.postgresDriver":  postgresDialect{},   // github.com/jbarham/gopgsqldriver
-	"*gosnowflake.SnowflakeDriver": postgresDialect{},   // github.com/snowflakedb/gosnowflake
+	"*gosnowflake.SnowflakeDriver": snowflakeDialect{},  // github.com/snowflakedb/gosnowflake (pointer)
+	"gosnowflake.SnowflakeDriver":  snowflakeDialect{},  // github.com/snowflakedb/gosnowflake (value)
 	"*mysql.MySQLDriver":           mysqlDialect{},      // github.com/go-sql-driver/mysql
 	"*godrv.Driver":                mysqlDialect{},      // github.com/ziutek/mymysql
 	"vitessdriver.drv":             mysqlDialect{},      // github.com/vitessio/vitess
